@@ -3,137 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kit Extensão de Cílios</title>
+<title>Oferta Especial</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
 }
-
 .container {
-    max-width: 420px;
-    margin: auto;
-    background: #fff;
-    min-height: 100vh;
-    padding-bottom: 90px;
+  max-width: 420px;
+  margin: auto;
+  background: #fff;
+  min-height: 100vh;
+  padding: 20px;
 }
-
-.produto-img {
-    width: 100%;
-    display: block;
+.produto {
+  text-align: center;
 }
-
-.badge {
-    background: #e60000;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
+.produto img {
+  width: 100%;
+  border-radius: 12px;
 }
-
-.content {
-    padding: 16px;
-}
-
-.titulo {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-.avaliacao {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 12px;
-}
-
 .preco {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+  margin: 15px 0;
 }
-
 .preco-antigo {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+  font-size: 14px;
 }
-
 .preco-novo {
-    color: #e60000;
-    font-size: 28px;
-    font-weight: bold;
+  color: #2e7d32;
+  font-size: 32px;
+  font-weight: bold;
 }
-
-.tag {
-    background: #e60000;
-    color: #fff;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 4px;
+.selos {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
 }
-
-.urgencia {
-    background: #fff3cd;
-    color: #856404;
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 14px;
-    margin-bottom: 15px;
+.selo {
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12px;
 }
-
-.descricao {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 20px;
-    line-height: 1.4;
-}
-
-/* CONTADOR */
 .contador {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+  background: #fff3cd;
+  color: #856404;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  margin: 15px 0;
 }
-
-.box-time {
-    background: #000;
-    color: #fff;
-    width: 23%;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 6px;
-}
-
-.box-time span {
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.box-time small {
-    font-size: 11px;
-    color: #ccc;
-}
-
-/* BOTÃO FIXO */
-.botao-fixo {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-width: 420px;
-    margin: auto;
-    background: #00c853;
-    color: #fff;
-    padding: 18px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
+.botao {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #2962ff;
+  color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
 }
 </style>
 </head>
@@ -141,73 +77,41 @@ body {
 <body>
 
 <div class="container">
+  <div class="produto">
+    <img src="https://via.placeholder.com/400x300" alt="Produto">
 
-    <div class="badge">🔥 PROMOÇÃO RELÂMPAGO</div>
+    <h2>Produto Exclusivo</h2>
 
-    <!-- IMAGEM DO PRODUTO -->
-    <img src="imagem-produto.jpg" class="produto-img">
-
-    <div class="content">
-        <div class="titulo">
-            Kit Extensão de Cílios – Auto Aplicação
-        </div>
-
-        <div class="avaliacao">
-            ⭐ 4.7 (187 avaliações) • 915 vendidos
-        </div>
-
-        <div class="preco">
-            <span class="tag">-90%</span>
-            <span class="preco-antigo">R$ 29,99</span>
-            <span class="preco-novo">R$ 2,99</span>
-        </div>
-
-        <div class="urgencia">
-            ⏰ Oferta disponível por tempo limitado
-        </div>
-
-        <!-- CONTADOR -->
-        <div class="contador">
-            <div class="box-time">
-                <span id="horas">00</span>
-                <small>Horas</small>
-            </div>
-            <div class="box-time">
-                <span id="minutos">00</span>
-                <small>Min</small>
-            </div>
-            <div class="box-time">
-                <span id="segundos">00</span>
-                <small>Seg</small>
-            </div>
-        </div>
-
-        <div class="descricao">
-            Kit completo com cílios postiços, aplicador curvado e cola.
-            Ideal para quem quer alongamento profissional em casa.
-        </div>
+    <div class="preco">
+      <div class="preco-antigo">De R$ 29,90</div>
+      <div class="preco-novo">R$ 2,99</div>
     </div>
 
+    <div class="contador">
+      ⏰ Oferta acaba em <span id="tempo">10:00</span>
+    </div>
+
+    <div class="selos">
+      <div class="selo">🔒 Site Seguro</div>
+      <div class="selo">⚡ Acesso Imediato</div>
+      <div class="selo">✅ Garantia</div>
+    </div>
+
+    <a href="agendamento.html" class="botao">
+      GARANTIR AGORA
+    </a>
+  </div>
 </div>
 
-<button class="botao-fixo" onclick="window.location.href='agendamento.html'">
-    Garantir por R$ 2,99
-</button>
-
 <script>
-// CONTADOR DE 30 MINUTOS
-let tempo = 30 * 60;
+let tempo = 600; // 10 minutos
 
 setInterval(() => {
-    let horas = Math.floor(tempo / 3600);
-    let minutos = Math.floor((tempo % 3600) / 60);
-    let segundos = tempo % 60;
-
-    document.getElementById("horas").innerText = String(horas).padStart(2, "0");
-    document.getElementById("minutos").innerText = String(minutos).padStart(2, "0");
-    document.getElementById("segundos").innerText = String(segundos).padStart(2, "0");
-
-    if (tempo > 0) tempo--;
+  let min = Math.floor(tempo / 60);
+  let seg = tempo % 60;
+  document.getElementById("tempo").innerText =
+    `${min}:${seg < 10 ? "0" : ""}${seg}`;
+  tempo--;
 }, 1000);
 </script>
 
