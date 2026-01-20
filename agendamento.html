@@ -128,15 +128,31 @@ button:active {
     <strong>R$ 2,99</strong>
   </div>
   
-fetch("https://script.google.com/macros/s/AKfycbxKWN6ZuHb2wY0jJzvi7PqswUL2fZBKPhvRpVVAAZnhzCcFC0xLNKdKH0IHZuTRgSE/exec", {
+<form onsubmit="enviar(event)">
+  <label>Nome</label>
+  <input id="nome" required>
+
+  <label>Telefone</label>
+  <input id="telefone" required>
+
+  <button type="submit">Confirmar</button>
+</form>
+
+<script>
+function enviar(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbxKWN6ZuHb2wY0jJzvi7PqswUL2fZBKPhvRpVVAAZnhzCcFC0xLNKdKH0IHZuTRgSE/exec", {
     method: "POST",
     body: new URLSearchParams({
       nome: document.getElementById("nome").value,
       telefone: document.getElementById("telefone").value
     })
-  }).then(() => {
+  })
+  .then(() => {
     window.location.href = "sucesso.html";
-  }).catch(() => {
+  })
+  .catch(() => {
     alert("Erro ao enviar");
   });
 }
@@ -179,6 +195,7 @@ fetch("https://script.google.com/macros/s/AKfycbxKWN6ZuHb2wY0jJzvi7PqswUL2fZBKPh
 
 </body>
 </html>
+
 
 
 
